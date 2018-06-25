@@ -1,5 +1,7 @@
 FROM debian
 
+COPY named.conf.logging /etc/bind/
+
 RUN apt update && apt install -y \
  bind9 \
  && rm -rf /var/lib/apt/lists/*
