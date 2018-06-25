@@ -1,11 +1,11 @@
 FROM debian
 
-COPY named.conf.logging /etc/bind/
-
 RUN apt update && apt install -y \
  bind9 \
  && rm -rf /var/lib/apt/lists/*
- 
+
+COPY named.conf.logging /etc/bind/
+
 RUN touch /var/log/bind.log \
 && chown bind:bind /var/log/bind.log
 
