@@ -1,0 +1,10 @@
+logging {
+        channel default_file {
+                file "/var/log/bind.log" size 10m;
+                severity info;
+                print-time yes;
+                print-severity yes;
+                print-category yes;
+        };
+        category default{ default_file; };
+};
